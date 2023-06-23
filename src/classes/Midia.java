@@ -5,13 +5,16 @@ public abstract class Midia {
     protected String nomeMidia;
     protected String genero;
     protected String dataAssistiu;
-        protected boolean ehFavorito;
-
+    protected boolean ehFavorito;
     protected String comentario;
     protected double nota;
     
-    public Midia() {}
-
+    public Midia(String nomeMidia, String genero) {
+        //Construtor para atender a classe QueroAssistir
+        this.nomeMidia = nomeMidia;
+        this.genero = genero;        
+    }
+    
     public Midia(String nomeMidia, String genero, String dataAssistiu, boolean ehFavorito) {
         this.nomeMidia = nomeMidia;
         this.genero = genero;
@@ -26,11 +29,24 @@ public abstract class Midia {
     public void adicionarNota(double nota) {
         this.nota = nota;
     }
-
-    public abstract void buscaMidia();
     
-    public abstract void editarMidia(); 
+    public abstract void adicionarMidia(); 
+    /*Método abstrato a ser implementado nas subclasses Filme e Série, 
+    cuja finalidade é armazenar os dados permanentemente em um arquivo txt.*/
 
+    public abstract void buscarMidia(String nomeBusca); 
+    /*Método abstrato a ser implementado nas subclasses Filme e Série, 
+    cuja finalidade é pesquisar mídia armazenada.*/
+    
+    public abstract void editarMidia(String nomeBusca, String novoNome, String novoGenero, String novaDataAssistiu,
+                                   boolean novoEhFavorito, String novoComentario, double novaNota, int novaDuracao); 
+    /*Método abstrato a ser implementado nas subclasses Filme e Série, 
+    cuja finalidade é alterar informações de uma mídia armazenada.*/
+
+    public abstract String toTexto();
+    /*Método abstrato a ser implementado nas subclasses Filme e Série, 
+    É útil para salvar os dados da mídia em um arquivo de texto.*/
+    
     public String getNomeMidia() {
         return nomeMidia;
     }
@@ -78,5 +94,4 @@ public abstract class Midia {
     public void setNota(double nota) {
         this.nota = nota;
     }
-
 }
