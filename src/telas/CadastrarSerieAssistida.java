@@ -15,6 +15,10 @@ public class CadastrarSerieAssistida extends javax.swing.JFrame {
      */
     public CadastrarSerieAssistida() {
         initComponents();
+        
+        //manter botão de salvar desabilitado até as informações estarem completamente preenchidas
+        
+        salvarSerieAssistida.setEnabled(false);
     }
 
     /**
@@ -29,18 +33,18 @@ public class CadastrarSerieAssistida extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        nomeSerieAssistida = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        checkboxGeneroSerieAssistida = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
+        favoritarSerieAssistida = new javax.swing.JRadioButton();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        comentarioSerieAssistida = new javax.swing.JTextArea();
+        dataSerieAssistida = new javax.swing.JTextField();
+        salvarSerieAssistida = new javax.swing.JButton();
+        cancelarSerieAssistida = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("AvaliaFlix");
@@ -56,11 +60,11 @@ public class CadastrarSerieAssistida extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(71, 123, 255));
         jLabel2.setText("Cadastrar Série");
 
-        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 123, 255)));
-        jTextField1.setCaretColor(new java.awt.Color(153, 0, 204));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        nomeSerieAssistida.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 123, 255)));
+        nomeSerieAssistida.setCaretColor(new java.awt.Color(153, 0, 204));
+        nomeSerieAssistida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                nomeSerieAssistidaActionPerformed(evt);
             }
         });
 
@@ -72,13 +76,13 @@ public class CadastrarSerieAssistida extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(51, 51, 51));
         jLabel4.setText("Data em que assistiu:");
 
-        jComboBox1.setForeground(new java.awt.Color(51, 51, 51));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Drama", "Comédia", "Romance", "Terror", "Ação", "Aventura", "Suspense" }));
-        jComboBox1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 123, 255)));
-        jComboBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        checkboxGeneroSerieAssistida.setForeground(new java.awt.Color(51, 51, 51));
+        checkboxGeneroSerieAssistida.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Drama", "Comédia", "Romance", "Terror", "Ação", "Aventura", "Suspense" }));
+        checkboxGeneroSerieAssistida.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 123, 255)));
+        checkboxGeneroSerieAssistida.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        checkboxGeneroSerieAssistida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                checkboxGeneroSerieAssistidaActionPerformed(evt);
             }
         });
 
@@ -86,11 +90,11 @@ public class CadastrarSerieAssistida extends javax.swing.JFrame {
         jLabel5.setText("Formato: dd/mm/yyyy");
         jLabel5.setToolTipText("Formato: dd/mm/yyyy");
 
-        jRadioButton1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        jRadioButton1.setText("Favoritar");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        favoritarSerieAssistida.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        favoritarSerieAssistida.setText("Favoritar");
+        favoritarSerieAssistida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                favoritarSerieAssistidaActionPerformed(evt);
             }
         });
 
@@ -98,21 +102,31 @@ public class CadastrarSerieAssistida extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(51, 51, 51));
         jLabel6.setText("Comentário");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 123, 255)));
-        jScrollPane1.setViewportView(jTextArea1);
+        comentarioSerieAssistida.setColumns(20);
+        comentarioSerieAssistida.setRows(5);
+        comentarioSerieAssistida.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 123, 255)));
+        jScrollPane1.setViewportView(comentarioSerieAssistida);
 
-        jTextField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 123, 255)));
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        dataSerieAssistida.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 123, 255)));
+        dataSerieAssistida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                dataSerieAssistidaActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Salvar");
+        salvarSerieAssistida.setText("Salvar");
+        salvarSerieAssistida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salvarSerieAssistidaActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Cancelar");
+        cancelarSerieAssistida.setText("Cancelar");
+        cancelarSerieAssistida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarSerieAssistidaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -122,25 +136,25 @@ public class CadastrarSerieAssistida extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nomeSerieAssistida, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
                     .addComponent(jLabel3)
                     .addComponent(jLabel5)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(checkboxGeneroSerieAssistida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(58, 58, 58)
-                        .addComponent(jRadioButton1))
+                        .addComponent(favoritarSerieAssistida))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(dataSerieAssistida, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jButton2)
+                        .addComponent(cancelarSerieAssistida)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(103, Short.MAX_VALUE))
+                .addContainerGap(109, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(salvarSerieAssistida)
                 .addGap(33, 33, 33))
         );
         jPanel1Layout.setVerticalGroup(
@@ -151,27 +165,27 @@ public class CadastrarSerieAssistida extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nomeSerieAssistida, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRadioButton1))
+                    .addComponent(checkboxGeneroSerieAssistida, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(favoritarSerieAssistida))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(dataSerieAssistida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(salvarSerieAssistida)
+                    .addComponent(cancelarSerieAssistida))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
@@ -189,21 +203,29 @@ public class CadastrarSerieAssistida extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void checkboxGeneroSerieAssistidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkboxGeneroSerieAssistidaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_checkboxGeneroSerieAssistidaActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void nomeSerieAssistidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeSerieAssistidaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_nomeSerieAssistidaActionPerformed
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void favoritarSerieAssistidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_favoritarSerieAssistidaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    }//GEN-LAST:event_favoritarSerieAssistidaActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void dataSerieAssistidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dataSerieAssistidaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_dataSerieAssistidaActionPerformed
+
+    private void cancelarSerieAssistidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarSerieAssistidaActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_cancelarSerieAssistidaActionPerformed
+
+    private void salvarSerieAssistidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarSerieAssistidaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_salvarSerieAssistidaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -242,9 +264,11 @@ public class CadastrarSerieAssistida extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton cancelarSerieAssistida;
+    private javax.swing.JComboBox<String> checkboxGeneroSerieAssistida;
+    private javax.swing.JTextArea comentarioSerieAssistida;
+    private javax.swing.JTextField dataSerieAssistida;
+    private javax.swing.JRadioButton favoritarSerieAssistida;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -252,10 +276,8 @@ public class CadastrarSerieAssistida extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField nomeSerieAssistida;
+    private javax.swing.JButton salvarSerieAssistida;
     // End of variables declaration//GEN-END:variables
 }
