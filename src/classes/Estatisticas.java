@@ -5,9 +5,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-/*Debs, essa foi um sugestão de implementação dada pelo ChatGPT
-Não conferi se está funcionado, mas decidir colocar aqui pq já tinha dado um contexto ao chat.
-Sinta-se livre para implementar da forma que quiser. */
 
 public class Estatisticas {
 
@@ -93,7 +90,7 @@ public class Estatisticas {
 
     private void calcularPorcentagemGenerosFilmes(int totalFilmes) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(arquivoFilmes));
-        int[] generosContagem = new int[10]; // Assumindo que existem até 10 gêneros diferentes
+        int[] generosContagem = new int[7]; // Os 7 gêneros que definimos na interface gráfica
         int totalGeneros = 0;
 
         String linha;

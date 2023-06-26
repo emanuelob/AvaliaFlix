@@ -7,6 +7,11 @@ public class Usuario {
     private String senha;
     private String nomeUsuario;
 
+    
+    public Usuario(){
+    
+}
+    
     public Usuario(String nomeCompleto, String email, String senha, String nomeUsuario) {
         this.nomeCompleto = nomeCompleto;
         this.email = email;
