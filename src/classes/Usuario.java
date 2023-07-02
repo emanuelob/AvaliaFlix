@@ -6,10 +6,8 @@ public class Usuario {
     private String email;
     private String senha;
     private String nomeUsuario;
-
     
     public Usuario(){
-    
 }
     
     public Usuario(String nomeCompleto, String email, String senha, String nomeUsuario) {
