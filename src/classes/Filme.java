@@ -12,19 +12,21 @@ import java.util.List;
 public class Filme extends Midia{
     private int duracao;
     
+    public Filme() {}
+    
     public Filme(String nomeMidia, String genero) {
         //Construtor para atender a classe QueroAssistir
         super(nomeMidia, genero);
     }
 
-    public Filme(int duracao, String nomeMidia, String genero, String dataAssistiu, String comentario, double nota, boolean ehFavorito) {
+    public Filme(String nomeMidia, String genero, String dataAssistiu, boolean ehFavorito, String comentario, double nota, int duracao) {
         super(nomeMidia, genero, dataAssistiu, ehFavorito);
         this.duracao = duracao;
         super.adicionarComentario(comentario);
         super.adicionarNota(nota);
     }
 
-    public String duracaoDoFilme(int duracao){ /*Transformando a duração em minutos para o formato HH:MM.*/
+    public String duracaoDoFilme(){ /*Transformando a duração em minutos para o formato HH:MM.*/
         int duracaoMinutos = this.getDuracao();
         int horas = duracaoMinutos / 60; // Divide a duração em minutos por 60 para obter as horas
         int minutos = duracaoMinutos % 60; // O resto da divisão por 60 são os minutos restantes
@@ -44,7 +46,7 @@ public class Filme extends Midia{
         /*Cada linha do arquivo de texto representa um filme
         e contém os dados separados por um caractere específico, 
         como ponto e vírgula (;)*/
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("filmes.txt", true))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/arquivosTXT/filmes.txt", true))) {
             String linha = this.nomeMidia + ";" + this.genero + ";" + this.dataAssistiu + ";" + this.ehFavorito + ";" + this.comentario + ";" + this.nota + ";" + this.duracao;
             writer.write(linha);
             writer.newLine();
@@ -61,7 +63,7 @@ public class Filme extends Midia{
 
         Se o filme for encontrado, por enquanto, será apresentado os dados do filme. 
         Se o filme não for encontrado após percorrer todas as linhas do arquivo, uma mensagem informando isso será exibida.*/
-        try (BufferedReader reader = new BufferedReader(new FileReader("filmes.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("src/arquivosTXT/filmes.txt"))) {
             String linha;
             while ((linha = reader.readLine()) != null) {
                 String[] dados = linha.split(";");
@@ -89,7 +91,7 @@ public class Filme extends Midia{
         // Lista para armazenar os filmes temporariamente
         List<String> filmes = new ArrayList<>();
 
-        try (BufferedReader reader = new BufferedReader(new FileReader("filmes.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("src/arquivosTXT/filmes.txt"))) {
             String linha;
             while ((linha = reader.readLine()) != null) {
                 String[] dados = linha.split(";");
@@ -113,7 +115,7 @@ public class Filme extends Midia{
             return;
         }
 
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("filmes.txt"))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/arquivosTXT/filmes.txt"))) {
             for (String filme : filmes) {
                 writer.write(filme);
                 writer.newLine();

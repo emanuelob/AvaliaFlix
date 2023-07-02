@@ -20,8 +20,8 @@ public class Estatisticas {
     private String arquivoSeries;
 
     public Estatisticas(String arquivoFilmes, String arquivoSeries) {
-        this.arquivoFilmes = arquivoFilmes;
-        this.arquivoSeries = arquivoSeries;
+        this.arquivoFilmes = "src/arquivosTXT/filmes.txt";
+        this.arquivoSeries = "src/arquivosTXT/series.txt";
     }
 
     public void gerarEstatisticas() {

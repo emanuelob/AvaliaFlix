@@ -9,6 +9,8 @@ public abstract class Midia {
     protected String comentario;
     protected double nota;
     
+    public Midia () {}
+    
     public Midia(String nomeMidia, String genero) {
         //Construtor para atender a classe QueroAssistir
         this.nomeMidia = nomeMidia;

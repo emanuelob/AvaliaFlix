@@ -29,7 +29,7 @@ as mídias previamente cadastradas serão carregadas para a lista midiasQueroAss
 
 public class QueroAssistir {
     private List<Midia> midiasQueroAssistir;
-    private static final String NOME_ARQUIVO = "QueroAssistir.txt";
+    //private static final String NOME_ARQUIVO = "QueroAssistir.txt";
 
     public QueroAssistir() {
         midiasQueroAssistir = new ArrayList<>();
@@ -88,7 +88,7 @@ public class QueroAssistir {
     }
 
     private void salvarNoArquivo(Midia midia) {
-        try (FileWriter fw = new FileWriter(NOME_ARQUIVO, true);
+        try (FileWriter fw = new FileWriter("src/arquivosTXT/QueroAssistir.txt", true);
              BufferedWriter bw = new BufferedWriter(fw);
              PrintWriter pw = new PrintWriter(bw)) {
             pw.println(midia.toTexto());
@@ -98,7 +98,7 @@ public class QueroAssistir {
     }
 
     public void carregarDoArquivo() {
-        try (FileReader fr = new FileReader(NOME_ARQUIVO);
+        try (FileReader fr = new FileReader("src/arquivosTXT/QueroAssistir.txt");
              BufferedReader br = new BufferedReader(fr)) {
             String linha;
             while ((linha = br.readLine()) != null) {

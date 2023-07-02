@@ -51,7 +51,7 @@ public class Favoritos {
     }
 
     public void carregarFavoritosFilmes() {
-        try (BufferedReader br = new BufferedReader(new FileReader("filmes.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("src/arquivosTXT/filmes.txt"))) {
             String linha;
             while ((linha = br.readLine()) != null) {
                 String[] dados = linha.split(";");
@@ -63,7 +63,7 @@ public class Favoritos {
                 double nota = Double.parseDouble(dados[5]);
                 int duracao = Integer.parseInt(dados[6]);
 
-                Filme filme = new Filme(duracao, nomeMidia, genero, dataAssistiu, comentario, nota, ehFavorito);
+                Filme filme = new Filme(nomeMidia, genero, dataAssistiu, ehFavorito, comentario, nota, duracao);
                 if (ehFavorito) {
                     favoritos.add(filme);
                 }
@@ -74,7 +74,7 @@ public class Favoritos {
     }
 
     public void carregarFavoritosSeries() {
-        try (BufferedReader br = new BufferedReader(new FileReader("series.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("src/arquivosTXT/series.txt"))) {
             String linha;
             while ((linha = br.readLine()) != null) {
                 String[] dados = linha.split(";");
@@ -87,7 +87,7 @@ public class Favoritos {
                 int temporada = Integer.parseInt(dados[6]);
                 int episodio = Integer.parseInt(dados[7]);
 
-                Serie serie = new Serie(temporada, episodio, nomeMidia, genero, dataAssistiu, comentario, nota, ehFavorito);
+                Serie serie = new Serie(nomeMidia, genero, dataAssistiu, ehFavorito, comentario, nota, temporada, episodio);
                 if (ehFavorito) {
                     favoritos.add(serie);
                 }

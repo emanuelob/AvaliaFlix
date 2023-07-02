@@ -18,10 +18,12 @@ public class Serie extends Midia{
         super(nomeMidia, genero);        
     }
     
-    public Serie(int temporada, int episodio, String nomeMidia, String genero, String dataAssistiu, String comentario, double nota, boolean ehFavorito) {
+    public Serie(String nomeMidia, String genero, String dataAssistiu, boolean ehFavorito, String comentario, double nota, int temporada, int episodio) {
         super(nomeMidia, genero, dataAssistiu, ehFavorito);
         this.temporada = temporada;
         this.episodio = episodio;
+        super.adicionarComentario(comentario);
+        super.adicionarNota(nota);
         }
 
     public int getTemporada() {
@@ -45,7 +47,7 @@ public class Serie extends Midia{
         /*Cada linha do arquivo de texto representa uma série
         e contém os dados separados por um caractere específico, 
         como ponto e vírgula (;)*/
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("series.txt", true))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/arquivosTXT/series.txt", true))) {
             String linha = this.nomeMidia + ";" + this.genero + ";" + this.dataAssistiu + ";" + this.ehFavorito + ";" + this.comentario + ";" + this.nota + ";" + this.temporada + ";" + this.episodio;
             writer.write(linha);
             writer.newLine();
@@ -62,7 +64,7 @@ public class Serie extends Midia{
 
         Se a série for encontrada, por enquanto, será apresentado os dados do filme. 
         Se a série não for encontrada após percorrer todas as linhas do arquivo, uma mensagem informando isso será exibida.*/    
-            try (BufferedReader reader = new BufferedReader(new FileReader("series.txt"))) {
+            try (BufferedReader reader = new BufferedReader(new FileReader("src/arquivosTXT/series.txt"))) {
             String linha;
             while ((linha = reader.readLine()) != null) {
                 String[] dados = linha.split(";");
@@ -90,7 +92,7 @@ public class Serie extends Midia{
     // Lista para armazenar os filmes temporariamente
         List<String> filmes = new ArrayList<>();
 
-        try (BufferedReader reader = new BufferedReader(new FileReader("filmes.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("src/arquivosTXT/series.txt"))) {
             String linha;
             while ((linha = reader.readLine()) != null) {
                 String[] dados = linha.split(";");
@@ -103,7 +105,8 @@ public class Serie extends Midia{
                     dados[3] = String.valueOf(novoEhFavorito);
                     dados[4] = novoComentario;
                     dados[5] = String.valueOf(novaNota);
-                    dados[6] = String.valueOf(novaDuracao);
+                    dados[6] = String.valueOf(dados[6]); //verificar
+                    dados[7] = String.valueOf(dados[7]); //verificar 
 
                     linha = String.join(";", dados); // Recriar a linha com os dados editados
                 }
@@ -114,7 +117,7 @@ public class Serie extends Midia{
             return;
         }
 
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("series.txt"))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/arquivosTXT/series.txt"))) {
             for (String filme : filmes) {
                 writer.write(filme);
                 writer.newLine();
