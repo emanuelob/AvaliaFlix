@@ -4,6 +4,9 @@
  */
 package telas;
 
+import classes.Usuario;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author olive
@@ -255,8 +258,30 @@ public class CadastrarUsuario extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Menu obj = new Menu();
-        obj.setVisible(true);
+    
+    String nomeCompleto = jTextField5.getText();
+    String nomeUsuario = jTextField6.getText();
+    String email = jTextField1.getText();
+    String senha = jTextField3.getText();
+
+    if (nomeCompleto.isEmpty() || nomeUsuario.isEmpty() || email.isEmpty() || senha.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos obrigatórios.", "Erro", JOptionPane.ERROR_MESSAGE);
+    }
+    else {
+        Usuario validaUsuario = new Usuario();
+        if (validaUsuario.validarEmail(email)) {
+            Usuario usuario = new Usuario(nomeCompleto, email, senha, nomeUsuario);
+            usuario.adicionarUsuario();
+            
+            JOptionPane.showMessageDialog(this, "Usuário cadastrado com sucesso.", "Usuário cadastrado!", JOptionPane.INFORMATION_MESSAGE);
+            Menu obj = new Menu();
+            obj.setVisible(true);
+            
+            dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor, coloque um e-mail válido.", "Erro", JOptionPane.ERROR_MESSAGE);
+        }  
+    }    
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed

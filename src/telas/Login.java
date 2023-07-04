@@ -3,10 +3,18 @@ package telas;
 
 //import javax.swing.JTextField;
 
+import classes.Usuario;
+import java.awt.Component;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 public class Login extends javax.swing.JFrame {
 
     public Login() {
         initComponents();
+        addFocusListenerToTextField();
     }
     
     @SuppressWarnings("unchecked")
@@ -18,12 +26,12 @@ public class Login extends javax.swing.JFrame {
         login = new javax.swing.JLabel();
         logo = new javax.swing.JLabel();
         user = new javax.swing.JTextField();
-        senha = new javax.swing.JTextField();
         iconUser = new javax.swing.JLabel();
         iconPassword = new javax.swing.JLabel();
         registrarConta = new javax.swing.JLabel();
         registrar = new javax.swing.JButton();
         entrar = new javax.swing.JButton();
+        senha = new javax.swing.JPasswordField();
         iconLogin = new javax.swing.JLabel();
         refIcon = new javax.swing.JLabel();
 
@@ -46,19 +54,11 @@ public class Login extends javax.swing.JFrame {
 
         user.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         user.setForeground(new java.awt.Color(102, 102, 102));
-        user.setText("e-mail");
+        user.setText("user");
+        user.setToolTipText("");
         user.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userActionPerformed(evt);
-            }
-        });
-
-        senha.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        senha.setForeground(new java.awt.Color(102, 102, 102));
-        senha.setText("senha");
-        senha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                senhaActionPerformed(evt);
             }
         });
 
@@ -91,6 +91,14 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        senha.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        senha.setForeground(new java.awt.Color(102, 102, 102));
+        senha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                senhaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelCover1Layout = new javax.swing.GroupLayout(panelCover1);
         panelCover1.setLayout(panelCover1Layout);
         panelCover1Layout.setHorizontalGroup(
@@ -107,7 +115,7 @@ public class Login extends javax.swing.JFrame {
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelCover1Layout.createSequentialGroup()
                             .addGap(22, 22, 22)
                             .addComponent(registrarConta)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                             .addComponent(registrar))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelCover1Layout.createSequentialGroup()
                             .addGap(14, 14, 14)
@@ -115,9 +123,9 @@ public class Login extends javax.swing.JFrame {
                                 .addComponent(iconUser)
                                 .addComponent(iconPassword))
                             .addGap(18, 18, 18)
-                            .addGroup(panelCover1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(senha, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(user, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(panelCover1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(user, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)
+                                .addComponent(senha))))
                     .addGroup(panelCover1Layout.createSequentialGroup()
                         .addGap(159, 159, 159)
                         .addComponent(entrar)))
@@ -131,13 +139,13 @@ public class Login extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(login)
                 .addGap(38, 38, 38)
-                .addGroup(panelCover1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(user, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(iconUser))
+                .addGroup(panelCover1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(iconUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(user))
                 .addGap(34, 34, 34)
-                .addGroup(panelCover1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(senha, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(iconPassword))
+                .addGroup(panelCover1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(iconPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(senha))
                 .addGap(27, 27, 27)
                 .addComponent(entrar)
                 .addGap(30, 30, 30)
@@ -199,22 +207,52 @@ public class Login extends javax.swing.JFrame {
     private void userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_userActionPerformed
-
-    private void senhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senhaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_senhaActionPerformed
-
+    
+    private void addFocusListenerToTextField() {
+            user.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (user.getText().equals("user")) {
+                    user.setText("");
+            }
+            }
+            @Override
+            public void focusLost(FocusEvent e) {
+                if (user.getText().isEmpty()) {
+                    user.setText("user");
+            }
+            }
+        });
+    }
+        
     private void registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarActionPerformed
         // TODO add your handling code here:
         CadastrarUsuario obj = new CadastrarUsuario();
         obj.setVisible(true);
+        
+        dispose();
     }//GEN-LAST:event_registrarActionPerformed
 
     private void entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarActionPerformed
         // TODO add your handling code here:
-        Menu obj = new Menu();
-        obj.setVisible(true);
+        String usuario = user.getText();
+        char[] senhaChars = senha.getPassword();
+        String senha = new String(senhaChars);
+        
+        Usuario objUsuario = new Usuario();
+
+        if (objUsuario.realizarLogin(usuario, senha)) {
+            Menu objMenu = new Menu();
+            objMenu.setVisible(true);
+            dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Usuário ou senha incorretos. Por favor, tente novamente.", "Erro de Login", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_entrarActionPerformed
+
+    private void senhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_senhaActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -261,7 +299,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel refIcon;
     private javax.swing.JButton registrar;
     private javax.swing.JLabel registrarConta;
-    private javax.swing.JTextField senha;
+    private javax.swing.JPasswordField senha;
     private javax.swing.JTextField user;
     // End of variables declaration//GEN-END:variables
 }

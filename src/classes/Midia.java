@@ -41,7 +41,7 @@ public abstract class Midia {
     cuja finalidade é pesquisar mídia armazenada.*/
     
     public abstract void editarMidia(String nomeBusca, String novoNome, String novoGenero, String novaDataAssistiu,
-                                   boolean novoEhFavorito, String novoComentario, double novaNota, int novaDuracao); 
+                                   boolean novoEhFavorito, String novoComentario, double novaNota, int novaDuracao, int novaTemporada, int novoEpisodio); 
     /*Método abstrato a ser implementado nas subclasses Filme e Série, 
     cuja finalidade é alterar informações de uma mídia armazenada.*/
 
