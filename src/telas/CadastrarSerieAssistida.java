@@ -18,7 +18,7 @@ public class CadastrarSerieAssistida extends javax.swing.JFrame {
         
         //manter botão de salvar desabilitado até as informações estarem completamente preenchidas
         
-        salvarSerieAssistida.setEnabled(false);
+        salvarFilmeAssistido.setEnabled(false);
     }
 
     /**
@@ -33,18 +33,24 @@ public class CadastrarSerieAssistida extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        nomeSerieAssistida = new javax.swing.JTextField();
+        nomeFilmeAssistido = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        checkboxGeneroSerieAssistida = new javax.swing.JComboBox<>();
+        checkboxGeneroFilmeAssistido = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
-        favoritarSerieAssistida = new javax.swing.JRadioButton();
+        favoritarFilmeAssistido = new javax.swing.JRadioButton();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        comentarioSerieAssistida = new javax.swing.JTextArea();
-        dataSerieAssistida = new javax.swing.JTextField();
-        salvarSerieAssistida = new javax.swing.JButton();
-        cancelarSerieAssistida = new javax.swing.JButton();
+        comentarioFilmeAssistido = new javax.swing.JTextArea();
+        salvarFilmeAssistido = new javax.swing.JButton();
+        cancelarFilmeAssistido = new javax.swing.JButton();
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("AvaliaFlix");
@@ -52,81 +58,111 @@ public class CadastrarSerieAssistida extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel1.setText("Nome do Filme");
+        jLabel1.setText("Nome da Série");
 
         jLabel2.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(71, 123, 255));
         jLabel2.setText("Cadastrar Série");
 
-        nomeSerieAssistida.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 123, 255)));
-        nomeSerieAssistida.setCaretColor(new java.awt.Color(153, 0, 204));
-        nomeSerieAssistida.addActionListener(new java.awt.event.ActionListener() {
+        nomeFilmeAssistido.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        nomeFilmeAssistido.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 123, 255)));
+        nomeFilmeAssistido.setCaretColor(new java.awt.Color(153, 0, 204));
+        nomeFilmeAssistido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nomeSerieAssistidaActionPerformed(evt);
+                nomeFilmeAssistidoActionPerformed(evt);
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 51, 51));
         jLabel3.setText("Gênero");
 
-        jLabel4.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 51, 51));
         jLabel4.setText("Data em que assistiu:");
 
-        checkboxGeneroSerieAssistida.setForeground(new java.awt.Color(51, 51, 51));
-        checkboxGeneroSerieAssistida.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Drama", "Comédia", "Romance", "Terror", "Ação", "Aventura", "Suspense" }));
-        checkboxGeneroSerieAssistida.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 123, 255)));
-        checkboxGeneroSerieAssistida.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        checkboxGeneroSerieAssistida.addActionListener(new java.awt.event.ActionListener() {
+        checkboxGeneroFilmeAssistido.setForeground(new java.awt.Color(51, 51, 51));
+        checkboxGeneroFilmeAssistido.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Drama", "Comédia", "Romance", "Terror", "Ação", "Aventura", "Suspense" }));
+        checkboxGeneroFilmeAssistido.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 123, 255)));
+        checkboxGeneroFilmeAssistido.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        checkboxGeneroFilmeAssistido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkboxGeneroSerieAssistidaActionPerformed(evt);
+                checkboxGeneroFilmeAssistidoActionPerformed(evt);
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("SansSerif", 0, 8)); // NOI18N
         jLabel5.setText("Formato: dd/mm/yyyy");
         jLabel5.setToolTipText("Formato: dd/mm/yyyy");
 
-        favoritarSerieAssistida.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        favoritarSerieAssistida.setText("Favoritar");
-        favoritarSerieAssistida.addActionListener(new java.awt.event.ActionListener() {
+        favoritarFilmeAssistido.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        favoritarFilmeAssistido.setText("Favoritar");
+        favoritarFilmeAssistido.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 123, 255)));
+        favoritarFilmeAssistido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                favoritarSerieAssistidaActionPerformed(evt);
+                favoritarFilmeAssistidoActionPerformed(evt);
             }
         });
 
-        jLabel6.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(51, 51, 51));
         jLabel6.setText("Comentário");
 
-        comentarioSerieAssistida.setColumns(20);
-        comentarioSerieAssistida.setRows(5);
-        comentarioSerieAssistida.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 123, 255)));
-        jScrollPane1.setViewportView(comentarioSerieAssistida);
+        comentarioFilmeAssistido.setColumns(20);
+        comentarioFilmeAssistido.setRows(5);
+        comentarioFilmeAssistido.setAutoscrolls(false);
+        comentarioFilmeAssistido.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 123, 255)));
+        jScrollPane1.setViewportView(comentarioFilmeAssistido);
 
-        dataSerieAssistida.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 123, 255)));
-        dataSerieAssistida.addActionListener(new java.awt.event.ActionListener() {
+        salvarFilmeAssistido.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        salvarFilmeAssistido.setForeground(new java.awt.Color(71, 123, 255));
+        salvarFilmeAssistido.setText("Salvar");
+        salvarFilmeAssistido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dataSerieAssistidaActionPerformed(evt);
+                salvarFilmeAssistidoActionPerformed(evt);
             }
         });
 
-        salvarSerieAssistida.setText("Salvar");
-        salvarSerieAssistida.addActionListener(new java.awt.event.ActionListener() {
+        cancelarFilmeAssistido.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        cancelarFilmeAssistido.setForeground(new java.awt.Color(71, 123, 255));
+        cancelarFilmeAssistido.setText("Cancelar");
+        cancelarFilmeAssistido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                salvarSerieAssistidaActionPerformed(evt);
+                cancelarFilmeAssistidoActionPerformed(evt);
             }
         });
 
-        cancelarSerieAssistida.setText("Cancelar");
-        cancelarSerieAssistida.addActionListener(new java.awt.event.ActionListener() {
+        jFormattedTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 123, 255)));
+        jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+        jFormattedTextField1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jFormattedTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelarSerieAssistidaActionPerformed(evt);
+                jFormattedTextField1ActionPerformed(evt);
             }
         });
+
+        jLabel7.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel7.setText("Nota:");
+
+        jTextField1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 123, 255)));
+
+        jLabel8.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel8.setText("Episódio");
+
+        jTextField2.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jTextField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 123, 255)));
+
+        jLabel9.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel9.setText("Temporada");
+
+        jTextField3.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jTextField3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 123, 255)));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -135,27 +171,44 @@ public class CadastrarSerieAssistida extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(nomeSerieAssistida, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel5)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(cancelarFilmeAssistido)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(salvarFilmeAssistido))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(checkboxGeneroFilmeAssistido, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jFormattedTextField1, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGap(46, 46, 46))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(favoritarFilmeAssistido)
+                                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)))
+                            .addComponent(nomeFilmeAssistido, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(26, 26, 26))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(checkboxGeneroSerieAssistida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(58, 58, 58)
-                        .addComponent(favoritarSerieAssistida))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(dataSerieAssistida, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(cancelarSerieAssistida)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(109, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(salvarSerieAssistida)
-                .addGap(33, 33, 33))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,35 +218,47 @@ public class CadastrarSerieAssistida extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(nomeSerieAssistida, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nomeFilmeAssistido, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(checkboxGeneroSerieAssistida, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(favoritarSerieAssistida))
+                    .addComponent(checkboxGeneroFilmeAssistido, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(favoritarFilmeAssistido))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
+                .addGap(9, 9, 9)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(dataSerieAssistida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(salvarSerieAssistida)
-                    .addComponent(cancelarSerieAssistida))
-                .addContainerGap(32, Short.MAX_VALUE))
+                    .addComponent(cancelarFilmeAssistido)
+                    .addComponent(salvarFilmeAssistido))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,29 +268,29 @@ public class CadastrarSerieAssistida extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void checkboxGeneroSerieAssistidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkboxGeneroSerieAssistidaActionPerformed
+    private void checkboxGeneroFilmeAssistidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkboxGeneroFilmeAssistidoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_checkboxGeneroSerieAssistidaActionPerformed
+    }//GEN-LAST:event_checkboxGeneroFilmeAssistidoActionPerformed
 
-    private void nomeSerieAssistidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeSerieAssistidaActionPerformed
+    private void nomeFilmeAssistidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeFilmeAssistidoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nomeSerieAssistidaActionPerformed
+    }//GEN-LAST:event_nomeFilmeAssistidoActionPerformed
 
-    private void favoritarSerieAssistidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_favoritarSerieAssistidaActionPerformed
+    private void favoritarFilmeAssistidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_favoritarFilmeAssistidoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_favoritarSerieAssistidaActionPerformed
+    }//GEN-LAST:event_favoritarFilmeAssistidoActionPerformed
 
-    private void dataSerieAssistidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dataSerieAssistidaActionPerformed
+    private void salvarFilmeAssistidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarFilmeAssistidoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_dataSerieAssistidaActionPerformed
+    }//GEN-LAST:event_salvarFilmeAssistidoActionPerformed
 
-    private void cancelarSerieAssistidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarSerieAssistidaActionPerformed
+    private void cancelarFilmeAssistidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarFilmeAssistidoActionPerformed
         this.setVisible(false);
-    }//GEN-LAST:event_cancelarSerieAssistidaActionPerformed
+    }//GEN-LAST:event_cancelarFilmeAssistidoActionPerformed
 
-    private void salvarSerieAssistidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarSerieAssistidaActionPerformed
+    private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_salvarSerieAssistidaActionPerformed
+    }//GEN-LAST:event_jFormattedTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -264,20 +329,26 @@ public class CadastrarSerieAssistida extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton cancelarSerieAssistida;
-    private javax.swing.JComboBox<String> checkboxGeneroSerieAssistida;
-    private javax.swing.JTextArea comentarioSerieAssistida;
-    private javax.swing.JTextField dataSerieAssistida;
-    private javax.swing.JRadioButton favoritarSerieAssistida;
+    private javax.swing.JButton cancelarFilmeAssistido;
+    private javax.swing.JComboBox<String> checkboxGeneroFilmeAssistido;
+    private javax.swing.JTextArea comentarioFilmeAssistido;
+    private javax.swing.JRadioButton favoritarFilmeAssistido;
+    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField nomeSerieAssistida;
-    private javax.swing.JButton salvarSerieAssistida;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField nomeFilmeAssistido;
+    private javax.swing.JButton salvarFilmeAssistido;
     // End of variables declaration//GEN-END:variables
 }
