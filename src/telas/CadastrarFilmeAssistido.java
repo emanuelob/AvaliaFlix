@@ -4,22 +4,38 @@
  */
 package telas;
 
+import classes.Filme;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author DELL
  */
 public class CadastrarFilmeAssistido extends javax.swing.JFrame {
 
-    /**
-     * Creates new form CadastrarFilmeAssistido
-     */
+    static ArrayList<Filme> listaFilmes;
+    private Filmes filmes;
+    
     public CadastrarFilmeAssistido() {
         initComponents();
-        
+       
         //manter botão de salvar desabilitado até as informações estarem completamente preenchidas
         
         salvarFilmeAssistido.setEnabled(false);
+        
+        
     }
+
+    
+    //Carregar os dados dos filmes na tabela
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -221,13 +237,19 @@ public class CadastrarFilmeAssistido extends javax.swing.JFrame {
     }//GEN-LAST:event_dataFilmeAssistidoActionPerformed
 
     private void salvarFilmeAssistidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarFilmeAssistidoActionPerformed
-        // TODO add your handling code here:
+        
+        
+        // Carregar os dados do filme na tabela
+        filmes.carregarTabelaFilmes();
+        
+        
     }//GEN-LAST:event_salvarFilmeAssistidoActionPerformed
 
     private void cancelarFilmeAssistidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarFilmeAssistidoActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_cancelarFilmeAssistidoActionPerformed
 
+    
     /**
      * @param args the command line arguments
      */
@@ -280,4 +302,6 @@ public class CadastrarFilmeAssistido extends javax.swing.JFrame {
     private javax.swing.JTextField nomeFilmeAssistido;
     private javax.swing.JButton salvarFilmeAssistido;
     // End of variables declaration//GEN-END:variables
+
+    
 }

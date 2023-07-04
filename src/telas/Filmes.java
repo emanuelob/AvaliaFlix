@@ -1,6 +1,11 @@
 
 package telas;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import javax.swing.table.DefaultTableModel;
+
 
 public class Filmes extends javax.swing.JFrame {
 
@@ -12,6 +17,34 @@ public class Filmes extends javax.swing.JFrame {
 
     }
 
+    
+    protected void carregarTabelaFilmes() {
+        
+        String data,nome;
+        double nota;
+        
+        DefaultTableModel modelo = new DefaultTableModel(new Object[] {"Gênero","Qtd Absoluta","Qtd Relativa"},0);
+        
+        try (BufferedReader filmesBr = new BufferedReader(new FileReader("src/arquivosTXT/filmes.txt"));) {
+
+            String linhaFilmes;
+            while ((linhaFilmes = filmesBr.readLine()) != null) {
+                String[] dadosFilme = linhaFilmes.split(";");
+                data = dadosFilme[2];
+                nome = dadosFilme[0];
+                nota = Double.parseDouble(dadosFilme[3]);
+                Object linha[] = new Object[] {data,nome,nota};
+                modelo.addRow(linha);
+            }
+        
+        
+        } catch (IOException e) {
+            e.printStackTrace();
+        }   
+        
+        filmesCadastrados.setModel(modelo);
+        
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -40,7 +73,7 @@ public class Filmes extends javax.swing.JFrame {
         telaInicial.setBackground(new java.awt.Color(71, 123, 255));
         telaInicial.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         telaInicial.setForeground(new java.awt.Color(51, 51, 51));
-        telaInicial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/home 50px.png"))); // NOI18N
+        telaInicial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagensProj/home 50px.png"))); // NOI18N
         telaInicial.setText("Tela Inicial");
         telaInicial.setToolTipText("Voltar à tela inicial");
         telaInicial.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 123, 255)));
@@ -83,7 +116,6 @@ public class Filmes extends javax.swing.JFrame {
         cadastrarFilme.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/AdicionarIcon 50px.png"))); // NOI18N
         cadastrarFilme.setText("Gostaria de cadastrar um filme?");
         cadastrarFilme.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 123, 255)));
-        cadastrarFilme.setBorderPainted(false);
         cadastrarFilme.setContentAreaFilled(false);
         cadastrarFilme.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         cadastrarFilme.addActionListener(new java.awt.event.ActionListener() {
@@ -94,7 +126,7 @@ public class Filmes extends javax.swing.JFrame {
 
         olaNome.setFont(new java.awt.Font("SansSerif", 1, 26)); // NOI18N
         olaNome.setForeground(new java.awt.Color(64, 123, 255));
-        olaNome.setText("Olá, fulano! ");
+        olaNome.setText("Olá!");
 
         jLabel2.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 51, 51));

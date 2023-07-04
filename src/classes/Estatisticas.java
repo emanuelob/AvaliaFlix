@@ -12,8 +12,10 @@ public class Estatisticas {
 
     //Implementação inicial da classe Estatistica:
     
-    /*Nesse trecho, declaramos a classe Estatistica com os atributos arquivoFilmes e arquivoSeries para armazenar os nomes dos arquivos de texto correspondentes aos filmes e séries. 
-    O construtor é responsável por receber esses nomes de arquivos.
+    private int totalFilmes;
+    private int totalSeries;
+    
+    /*
 
     O método gerarEstatisticas() é responsável por chamar os métodos auxiliares para contar o total de filmes, 
     o total de séries e o total de mídias, e imprimir essas informações na saída.*/
@@ -22,9 +24,6 @@ public class Estatisticas {
     public Estatisticas() {
     }
 
-    
-    
-    
     
     public void gerarEstatisticas() {
         try {
@@ -42,6 +41,15 @@ public class Estatisticas {
         }
     }
 
+    public int getTotalFilmes() {
+        return totalFilmes;
+    }
+
+    public int getTotalSeries() {
+        return totalSeries;
+    }
+    
+    
     /*Esse método utiliza um objeto BufferedReader para ler o arquivo de filmes linha por linha. 
     A cada linha lida, incrementamos o contador totalFilmes. Após percorrer todo o arquivo, 
     fechamos o leitor e retornamos o total de filmes encontrados.*/
