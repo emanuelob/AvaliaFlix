@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Stranger Things 4;Suspense;2022-09-10;true;turn around, look what you seeeeeee;5.0;3;25
 Breaking Bad;Drama;2021-08-20;true;Incrível!;4.9;5;62
 Stranger Things 4;Suspense;2022-09-10;true;turn around, look what you seeeeeee;5.0;3;25
@@ -22,3 +23,5 @@ Stranger Things 4;Suspense;2022-09-10;true;turn around, look what you seeeeeee;5
 Breaking Bad;Drama;2021-08-20;true;Incrível!;4.9;5;62
 Stranger Things 4;Suspense;2022-09-10;true;turn around, look what you seeeeeee;5.0;3;25
 Breaking Bad;Drama;2021-08-20;true;Incrível!;4.9;5;62
+=======
+>>>>>>> d08f4259dfd30c221a1b355e21403831fe955a3c

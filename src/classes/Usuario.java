@@ -1,26 +1,78 @@
 
 package classes;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class Usuario {
     private String nomeCompleto;
     private String email;
     private String senha;
     private String nomeUsuario;
     
-    public Usuario(){
-}
-    
+    public Usuario(){}
+  
     public Usuario(String nomeCompleto, String email, String senha, String nomeUsuario) {
         this.nomeCompleto = nomeCompleto;
         this.email = email;
         this.senha = senha;
         this.nomeUsuario = nomeUsuario;
     }
+    
+    public void adicionarUsuario() {
+    try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/arquivosTXT/usuarios.txt", true))) {
+        String linha = nomeCompleto + ";" + email + ";" + senha + ";" + nomeUsuario;
+        writer.write(linha);
+        writer.newLine();
+    } catch (IOException e) {
+        System.out.println("Erro ao escrever no arquivo de usuário: " + e.getMessage());
+    }
+    }
+    
+        public boolean realizarLogin(String usuario, String senha) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("src/arquivosTXT/usuarios.txt"))) {
+            String linha;
+            while ((linha = reader.readLine()) != null) {
+                String[] dadosUsuario = linha.split(";");
+                if (dadosUsuario[3].equals(usuario)) {
+                    String usuarioArquivo = dadosUsuario[3];
+                    String senhaArquivo = dadosUsuario[2];
+                    
+                    if (usuarioArquivo.equals(usuario) && senhaArquivo.equals(senha)) {
+                        return true; // Login válido
+                    }
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Erro ao ler o arquivo de usuários: " + e.getMessage());
+        }
+        return false; // Login inválido
+    }
 
-    public boolean validarEmail() {
+    public boolean validarEmail(String email) {
         // Verifica se o e-mail possui um formato válido
         String regex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
         return email.matches(regex);
+    }
+    
+    public void editarUsuario(String novoNomeCompleto, String novoEmail, String novaSenha, String novoNomeUsuario) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("src/arquivosTXT/usuarios.txt"))) {
+            String linha;
+            while ((linha = reader.readLine()) != null) {
+                String[] dadosUsuario = linha.split(";");
+                if (dadosUsuario.length == 4) {
+                    dadosUsuario[0] = novoNomeCompleto;
+                    dadosUsuario[1] = novoEmail;
+                    dadosUsuario[2] = novaSenha;
+                    dadosUsuario[3] = novoNomeUsuario;
+                    }
+                }
+        } catch (IOException e) {
+            System.out.println("Erro ao ler o arquivo de usuários: " + e.getMessage());
+        }
     }
 
     public String getNomeCompleto() {

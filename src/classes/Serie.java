@@ -84,7 +84,7 @@ public class Serie extends Midia{
 
     @Override
     public void editarMidia(String nomeBusca, String novoNome, String novoGenero, String novaDataAssistiu,
-                                   boolean novoEhFavorito, String novoComentario, double novaNota, int novaDuracao) {
+                                   boolean novoEhFavorito, String novoComentario, double novaNota, int novaDuracao,  int novaTemporada, int novoEpisodio) {
         /*O método lê o arquivo de texto, encontra a série desejada pelo nome, 
         realiza a edição dos atributos na linha correspondente e armazena todas as linhas (filmes) em uma lista temporária. 
         Após a edição, o método reescreve todas as linhas no arquivo de texto, substituindo o conteúdo anterior.*/
@@ -105,8 +105,8 @@ public class Serie extends Midia{
                     dados[3] = String.valueOf(novoEhFavorito);
                     dados[4] = novoComentario;
                     dados[5] = String.valueOf(novaNota);
-                    dados[6] = String.valueOf(dados[6]); //verificar
-                    dados[7] = String.valueOf(dados[7]); //verificar 
+                    dados[6] = String.valueOf(novaTemporada); 
+                    dados[7] = String.valueOf(novoEpisodio);  
 
                     linha = String.join(";", dados); // Recriar a linha com os dados editados
                 }

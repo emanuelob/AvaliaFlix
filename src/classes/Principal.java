@@ -28,14 +28,23 @@ public class Principal {
         serie1.buscarMidia("Stranger Things");
         serie2.buscarMidia("Breaking Bad");
         
-        filme1.editarMidia("O Senhor dos Anéis", "O Senhor dos Anéis 3", "Fantasia", "2021-06-01", true, "Ótimo filme!", 4.5, 180);
-        serie1.editarMidia("Stranger Things", "Stranger Things 4", "Suspense", "2022-09-10", true, "turn around, look what you seeeeeee", 5.0, 0);
+        filme1.editarMidia("O Senhor dos Anéis", "O Senhor dos Anéis 3", "Fantasia", "2021-06-01", true, "Ótimo filme!", 4.5, 180, 0, 0);
+        serie1.editarMidia("Stranger Things", "Stranger Things 4", "Suspense", "2022-09-10", true, "turn around, look what you seeeeeee", 5.0, 0, 1, 2);
     
         filme1.toTexto();
         serie1.toTexto();
         
+<<<<<<< HEAD
         Estatisticas estat = new Estatisticas(); 
         
         estat.calcularClassificacoesPorNota();
+=======
+        //Verificando cadastro de usuário
+        Usuario user = new Usuario("Debora", "debs@gmail.com", "123", "Debra");
+        Usuario user1 = new Usuario("Debora", "debs_gmail.com", "123", "Debra");
+        
+        user.adicionarUsuario();
+        user1.adicionarUsuario();
+>>>>>>> d08f4259dfd30c221a1b355e21403831fe955a3c
     }
 }

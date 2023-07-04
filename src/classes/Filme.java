@@ -83,7 +83,7 @@ public class Filme extends Midia{
 
     @Override
     public void editarMidia(String nomeBusca, String novoNome, String novoGenero, String novaDataAssistiu,
-            boolean novoEhFavorito, String novoComentario, double novaNota, int novaDuracao) {
+            boolean novoEhFavorito, String novoComentario, double novaNota, int novaDuracao,  int novaTemporada, int novoEpisodio) {
         /*O método lê o arquivo de texto, encontra o filme desejado pelo nome, 
         realiza a edição dos atributos na linha correspondente e armazena todas as linhas (filmes) em uma lista temporária. 
         Após a edição, o método reescreve todas as linhas no arquivo de texto, substituindo o conteúdo anterior.*/
