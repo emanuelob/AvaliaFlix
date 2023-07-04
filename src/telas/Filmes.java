@@ -46,7 +46,7 @@ public class Filmes extends javax.swing.JFrame {
         telaInicial.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 123, 255)));
         telaInicial.setBorderPainted(false);
         telaInicial.setContentAreaFilled(false);
-        telaInicial.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        telaInicial.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         telaInicial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 telaInicialActionPerformed(evt);
@@ -172,7 +172,7 @@ public class Filmes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void telaInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telaInicialActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
     }//GEN-LAST:event_telaInicialActionPerformed
 
     private void cadastrarFilmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarFilmeActionPerformed

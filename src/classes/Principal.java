@@ -33,5 +33,9 @@ public class Principal {
     
         filme1.toTexto();
         serie1.toTexto();
+        
+        Estatisticas estat = new Estatisticas(); 
+        
+        estat.calcularClassificacoesPorNota();
     }
 }

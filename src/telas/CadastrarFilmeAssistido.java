@@ -201,6 +201,7 @@ public class CadastrarFilmeAssistido extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void checkboxGeneroFilmeAssistidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkboxGeneroFilmeAssistidoActionPerformed

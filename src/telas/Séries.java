@@ -46,6 +46,7 @@ public class Séries extends javax.swing.JFrame {
         telaInicial.setText("Tela Inicial");
         telaInicial.setToolTipText("Voltar à tela inicial");
         telaInicial.setBorder(null);
+        telaInicial.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         telaInicial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 telaInicialActionPerformed(evt);
@@ -176,7 +177,7 @@ public class Séries extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void telaInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telaInicialActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
     }//GEN-LAST:event_telaInicialActionPerformed
 
     private void cadastrarFilmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarFilmeActionPerformed
