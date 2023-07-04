@@ -284,9 +284,6 @@ public class CadastrarFilmeAssistido extends javax.swing.JFrame {
     }//GEN-LAST:event_favoritarFilmeAssistidoActionPerformed
 
     private void cancelarFilmeAssistidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarFilmeAssistidoActionPerformed
-        this.setVisible(false);
-        Menu objMenu = new Menu();
-        objMenu.setVisible(true);
         dispose();
     }//GEN-LAST:event_cancelarFilmeAssistidoActionPerformed
 

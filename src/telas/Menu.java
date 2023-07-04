@@ -357,31 +357,33 @@ public class Menu extends javax.swing.JFrame {
 
     private void seriejButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seriejButtonActionPerformed
         // TODO add your handling code here:
-        Séries obj = new Séries();
+        CadastrarSerieAssistida obj = new CadastrarSerieAssistida();
         obj.setVisible(true);
     }//GEN-LAST:event_seriejButtonActionPerformed
 
     private void filmejButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filmejButtonActionPerformed
         // TODO add your handling code here:
-        Filmes obj = new Filmes();
+        CadastrarFilmeAssistido obj = new CadastrarFilmeAssistido();
         obj.setVisible(true);
     }//GEN-LAST:event_filmejButtonActionPerformed
 
     private void favoritosjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_favoritosjButtonActionPerformed
         // TODO add your handling code here:
-        //Favoritos obj1 = new Favoritos();
-        //obj1.setVisible(true);
+        //Favoritos obj = new Favoritos();
+        //obj.setVisible(true);
 
     }//GEN-LAST:event_favoritosjButtonActionPerformed
 
     private void playlistjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playlistjButtonActionPerformed
         // TODO add your handling code here:
-        //Playlist obj = new Playlist();
+        //QueroAssistir obj = new QueroAssistir();
         //obj.setVisible(true);
     }//GEN-LAST:event_playlistjButtonActionPerformed
 
     private void estatisticajButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estatisticajButtonActionPerformed
         // TODO add your handling code here:
+        Estatisticas obj = new Estatisticas();
+        obj.setVisible(true);
     }//GEN-LAST:event_estatisticajButtonActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
