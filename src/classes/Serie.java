@@ -13,11 +13,8 @@ public class Serie extends Midia{
     private int temporada;
     private int episodio;
     
-    public Serie(String nomeMidia, String genero){
-        //Construtor para atender a classe QueroAssistir
-        super(nomeMidia, genero);        
-    }
-    
+    public Serie() {}
+     
     public Serie(String nomeMidia, String genero, String dataAssistiu, boolean ehFavorito, String comentario, double nota, int temporada, int episodio) {
         super(nomeMidia, genero, dataAssistiu, ehFavorito);
         this.temporada = temporada;
@@ -62,7 +59,7 @@ public class Serie extends Midia{
         Para cada linha, ele divide os dados separados pelo caractere ponto e vírgula (;) e 
         verifica se o nome da mídia é igual ao nome de busca desejado (considerando case insensitive).
 
-        Se a série for encontrada, por enquanto, será apresentado os dados do filme. 
+        Se a série for encontrada, por enquanto, será apresentado os dados da série. 
         Se a série não for encontrada após percorrer todas as linhas do arquivo, uma mensagem informando isso será exibida.*/    
             try (BufferedReader reader = new BufferedReader(new FileReader("src/arquivosTXT/series.txt"))) {
             String linha;
@@ -86,7 +83,7 @@ public class Serie extends Midia{
     public void editarMidia(String nomeBusca, String novoNome, String novoGenero, String novaDataAssistiu,
                                    boolean novoEhFavorito, String novoComentario, double novaNota, int novaDuracao,  int novaTemporada, int novoEpisodio) {
         /*O método lê o arquivo de texto, encontra a série desejada pelo nome, 
-        realiza a edição dos atributos na linha correspondente e armazena todas as linhas (filmes) em uma lista temporária. 
+        realiza a edição dos atributos na linha correspondente e armazena todas as linhas (séries) em uma lista temporária. 
         Após a edição, o método reescreve todas as linhas no arquivo de texto, substituindo o conteúdo anterior.*/
         
     // Lista para armazenar os filmes temporariamente
@@ -125,14 +122,5 @@ public class Serie extends Midia{
         } catch (IOException e) {
             System.out.println("Erro ao escrever no arquivo de séries: " + e.getMessage());
         }    
-    }
-    
-    @Override
-    public String toTexto() {
-       /*Tem a funcionalidade de retornar uma representação em texto dos atributos da mídia separados por um caractere delimitador.
-        Retorna uma string concatenada no seguinte formato: "Filme;Nome do Filme;Gênero do Filme"
-        Essa String representa os atributos da mídia de uma forma estruturada, 
-        permitindo que eles possam ser facilmente recuperados e interpretados posteriormente.*/
-        return "Serie;" + nomeMidia + ";" + genero;
     }
 }

@@ -91,7 +91,7 @@ public class CadastrarFilmeAssistido extends javax.swing.JFrame {
         jLabel4.setText("Data em que assistiu:");
 
         checkboxGeneroFilmeAssistido.setForeground(new java.awt.Color(51, 51, 51));
-        checkboxGeneroFilmeAssistido.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Drama", "Comédia", "Romance", "Terror", "Ação", "Aventura", "Suspense" }));
+        checkboxGeneroFilmeAssistido.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Drama", "Comédia", "Romance", "Terror", "Ação", "Aventura", "Suspense", "Animação" }));
         checkboxGeneroFilmeAssistido.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 123, 255)));
         checkboxGeneroFilmeAssistido.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         checkboxGeneroFilmeAssistido.addActionListener(new java.awt.event.ActionListener() {
@@ -285,6 +285,9 @@ public class CadastrarFilmeAssistido extends javax.swing.JFrame {
 
     private void cancelarFilmeAssistidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarFilmeAssistidoActionPerformed
         this.setVisible(false);
+        Menu objMenu = new Menu();
+        objMenu.setVisible(true);
+        dispose();
     }//GEN-LAST:event_cancelarFilmeAssistidoActionPerformed
 
     private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed

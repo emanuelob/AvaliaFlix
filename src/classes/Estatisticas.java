@@ -7,25 +7,20 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-
 public class Estatisticas {
 
     //Implementação inicial da classe Estatistica:
     
-    /*Nesse trecho, declaramos a classe Estatistica com os atributos arquivoFilmes e arquivoSeries para armazenar os nomes dos arquivos de texto correspondentes aos filmes e séries. 
-    O construtor é responsável por receber esses nomes de arquivos.
-
+    private int totalFilmes;
+    private int totalSeries;
+    
+    /*
     O método gerarEstatisticas() é responsável por chamar os métodos auxiliares para contar o total de filmes, 
     o total de séries e o total de mídias, e imprimir essas informações na saída.*/
     
-    
     public Estatisticas() {
     }
-
-    
-    
-    
-    
+ 
     public void gerarEstatisticas() {
         try {
             int totalFilmes = contarFilmes();
@@ -42,6 +37,14 @@ public class Estatisticas {
         }
     }
 
+    public int getTotalFilmes() {
+        return totalFilmes;
+    }
+
+    public int getTotalSeries() {
+        return totalSeries;
+    }
+    
     /*Esse método utiliza um objeto BufferedReader para ler o arquivo de filmes linha por linha. 
     A cada linha lida, incrementamos o contador totalFilmes. Após percorrer todo o arquivo, 
     fechamos o leitor e retornamos o total de filmes encontrados.*/
@@ -66,16 +69,12 @@ public class Estatisticas {
     reader.close();
     return totalSeries;
     }
-    
     /*Nesse código, criamos o método calcularPorcentagemGeneros(), 
     responsável por chamar os métodos auxiliares para calcular a porcentagem de gêneros mais assistidos em filmes, séries e de forma geral.
 
     Os métodos calcularPorcentagemGenerosFilmes(), calcularPorcentagemGenerosSeries() e calcularPorcentagemGenerosGeral() 
     são responsáveis por ler os arquivos de filmes e séries, contar a quantidade de cada gênero e calcular a porcentagem em relação ao total de filmes, séries ou mídias. 
-    Os resultados são exibidos na saída.*/
-    
-    
-    
+    Os resultados são exibidos na saída.*/ 
 public void calcularPorcentagemGeralGeneros() {
     Map<String, Integer> generosContagemFilme = new HashMap<>();
     Map<String, Integer> generosContagemSerie = new HashMap<>();
@@ -124,7 +123,7 @@ public void calcularPorcentagemGeralGeneros() {
             System.out.printf("%s: %.2f%%%n", genero, porcentagem);
         }
         
-        
+    
     } catch (IOException e) {
         e.printStackTrace();
     }
@@ -140,15 +139,12 @@ public void calcularPorcentagemGeralGeneros() {
     }
 }
 
-
-    
     /*Nesse código, criamos o método calcularClassificacoesPorNota(), 
     responsável por chamar os métodos auxiliares para calcular a quantidade de mídias classificadas com cada nota de 1 a 5 em filmes, séries e de forma geral.
 
     Os métodos calcularClassificacoesPorNotaFilmes(), calcularClassificacoesPorNotaSeries() e calcularClassificacoesPorNotaGeral() 
     são responsáveis por ler os arquivos de filmes e séries, contar a quantidade de mídias em cada classificação de nota e exibir os resultados na saída.
     */
-    
     public void calcularClassificacoesPorNota() {
     try {
         int totalFilmes = contarFilmes();
@@ -331,7 +327,5 @@ public void calcularPorcentagemGeralGeneros() {
 
         System.out.println("Estatísticas Gerais:");
         System.out.println("Tempo Total: " + horas + " horas e " + minutos + " minutos");
-    }
-    
-   
+    } 
 }

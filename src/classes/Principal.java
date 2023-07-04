@@ -1,5 +1,7 @@
 package classes;
 
+/*Classe criada com o intuito de testar implementação das classes*/
+
 public class Principal {
     
     public static void main(String[] args) {
@@ -31,9 +33,6 @@ public class Principal {
         filme1.editarMidia("O Senhor dos Anéis", "O Senhor dos Anéis 3", "Fantasia", "2021-06-01", true, "Ótimo filme!", 4.5, 180, 0, 0);
         serie1.editarMidia("Stranger Things", "Stranger Things 4", "Suspense", "2022-09-10", true, "turn around, look what you seeeeeee", 5.0, 0, 1, 2);
     
-        filme1.toTexto();
-        serie1.toTexto();
-        
         Estatisticas estat = new Estatisticas(); 
         
         estat.calcularClassificacoesPorNota();

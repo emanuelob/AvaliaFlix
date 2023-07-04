@@ -44,10 +44,6 @@ public abstract class Midia {
                                    boolean novoEhFavorito, String novoComentario, double novaNota, int novaDuracao, int novaTemporada, int novoEpisodio); 
     /*Método abstrato a ser implementado nas subclasses Filme e Série, 
     cuja finalidade é alterar informações de uma mídia armazenada.*/
-
-    public abstract String toTexto();
-    /*Método abstrato a ser implementado nas subclasses Filme e Série, 
-    É útil para salvar os dados da mídia em um arquivo de texto.*/
     
     public String getNomeMidia() {
         return nomeMidia;
