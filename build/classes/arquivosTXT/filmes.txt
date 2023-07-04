@@ -1,27 +1,3 @@
-<<<<<<< HEAD
-O Senhor dos Anéis 3;Fantasia;2021-06-01;true;Ótimo filme!;4.5;180
-Vingadores: Ultimato;Ação;2021-07-15;true;Adorei!;4.8;210
-O Senhor dos Anéis 3;Fantasia;2021-06-01;true;Ótimo filme!;4.5;180
-Vingadores: Ultimato;Ação;2021-07-15;true;Adorei!;4.8;210
-O Senhor dos Anéis 3;Fantasia;2021-06-01;true;Ótimo filme!;4.5;180
-Vingadores: Ultimato;Ação;2021-07-15;true;Adorei!;4.8;210
-O Senhor dos Anéis 3;Fantasia;2021-06-01;true;Ótimo filme!;4.5;180
-Vingadores: Ultimato;Ação;2021-07-15;true;Adorei!;4.8;210
-O Senhor dos Anéis 3;Fantasia;2021-06-01;true;Ótimo filme!;4.5;180
-Vingadores: Ultimato;Ação;2021-07-15;true;Adorei!;4.8;210
-O Senhor dos Anéis 3;Fantasia;2021-06-01;true;Ótimo filme!;4.5;180
-Vingadores: Ultimato;Ação;2021-07-15;true;Adorei!;4.8;210
-O Senhor dos Anéis 3;Fantasia;2021-06-01;true;Ótimo filme!;4.5;180
-Vingadores: Ultimato;Ação;2021-07-15;true;Adorei!;4.8;210
-O Senhor dos Anéis 3;Fantasia;2021-06-01;true;Ótimo filme!;4.5;180
-Vingadores: Ultimato;Ação;2021-07-15;true;Adorei!;4.8;210
-O Senhor dos Anéis 3;Fantasia;2021-06-01;true;Ótimo filme!;4.5;180
-Vingadores: Ultimato;Ação;2021-07-15;true;Adorei!;4.8;210
-O Senhor dos Anéis 3;Fantasia;2021-06-01;true;Ótimo filme!;4.5;180
-Vingadores: Ultimato;Ação;2021-07-15;true;Adorei!;4.8;210
-O Senhor dos Anéis 3;Fantasia;2021-06-01;true;Ótimo filme!;4.5;180
-Vingadores: Ultimato;Ação;2021-07-15;true;Adorei!;4.8;210
-O Senhor dos Anéis 3;Fantasia;2021-06-01;true;Ótimo filme!;4.5;180
-Vingadores: Ultimato;Ação;2021-07-15;true;Adorei!;4.8;210
-=======
->>>>>>> d08f4259dfd30c221a1b355e21403831fe955a3c
+
+As Vantagens de ser Invsível;Drama;04/07/2022;true;adorei;5.0;120
+Nem que a vaca tussa;Aventura;04/04/2023;false;tossiu;5.0;150

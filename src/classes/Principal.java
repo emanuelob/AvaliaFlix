@@ -34,17 +34,15 @@ public class Principal {
         filme1.toTexto();
         serie1.toTexto();
         
-<<<<<<< HEAD
         Estatisticas estat = new Estatisticas(); 
         
         estat.calcularClassificacoesPorNota();
-=======
+
         //Verificando cadastro de usuário
         Usuario user = new Usuario("Debora", "debs@gmail.com", "123", "Debra");
         Usuario user1 = new Usuario("Debora", "debs_gmail.com", "123", "Debra");
         
         user.adicionarUsuario();
         user1.adicionarUsuario();
->>>>>>> d08f4259dfd30c221a1b355e21403831fe955a3c
     }
 }
