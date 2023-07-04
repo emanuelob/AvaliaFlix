@@ -5,6 +5,7 @@
 package telas;
 
 import classes.Filme;
+import classes.Serie;
 import javax.swing.JOptionPane;
 
 /**
@@ -30,6 +31,7 @@ public class CadastrarSerieAssistida extends javax.swing.JFrame {
     private void initComponents() {
 
         cancelarFilmeAssistido1 = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -49,6 +51,8 @@ public class CadastrarSerieAssistida extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         cancelarFilmeAssistido2 = new javax.swing.JButton();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
 
         cancelarFilmeAssistido1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         cancelarFilmeAssistido1.setForeground(new java.awt.Color(71, 123, 255));
@@ -67,11 +71,11 @@ public class CadastrarSerieAssistida extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel1.setText("Nome do Filme");
+        jLabel1.setText("Nome da Série");
 
         jLabel2.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(71, 123, 255));
-        jLabel2.setText("Cadastrar Filme");
+        jLabel2.setText("Cadastrar Série");
 
         nomeFilmeAssistido.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         nomeFilmeAssistido.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 123, 255)));
@@ -91,7 +95,7 @@ public class CadastrarSerieAssistida extends javax.swing.JFrame {
         jLabel4.setText("Data em que assistiu:");
 
         checkboxGeneroFilmeAssistido.setForeground(new java.awt.Color(51, 51, 51));
-        checkboxGeneroFilmeAssistido.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Drama", "Comédia", "Romance", "Terror", "Ação", "Aventura", "Suspense" }));
+        checkboxGeneroFilmeAssistido.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Drama", "Comédia", "Romance", "Terror", "Ação", "Aventura", "Suspense", "Animação" }));
         checkboxGeneroFilmeAssistido.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 123, 255)));
         checkboxGeneroFilmeAssistido.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         checkboxGeneroFilmeAssistido.addActionListener(new java.awt.event.ActionListener() {
@@ -151,7 +155,7 @@ public class CadastrarSerieAssistida extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel8.setText("Duração (em minutos)");
+        jLabel8.setText("Temporada");
 
         jTextField2.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jTextField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 123, 255)));
@@ -171,6 +175,18 @@ public class CadastrarSerieAssistida extends javax.swing.JFrame {
             }
         });
 
+        jTextField3.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jTextField3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 123, 255)));
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel9.setText("Episódio");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -179,30 +195,12 @@ public class CadastrarSerieAssistida extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(checkboxGeneroFilmeAssistido, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(46, 46, 46)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(favoritarFilmeAssistido)
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addComponent(jTextField1)))
                             .addComponent(nomeFilmeAssistido, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextField2)
-                                .addGap(79, 79, 79))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
@@ -212,9 +210,27 @@ public class CadastrarSerieAssistida extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(cancelarFilmeAssistido)
-                                .addGap(65, 65, 65)
-                                .addComponent(cancelarFilmeAssistido2)))
-                        .addGap(83, 83, 83))))
+                                .addGap(112, 112, 112)
+                                .addComponent(cancelarFilmeAssistido2))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(checkboxGeneroFilmeAssistido, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jFormattedTextField1, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jLabel8))
+                                .addGap(46, 46, 46)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jTextField1)
+                                    .addComponent(jTextField3)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(favoritarFilmeAssistido)
+                                            .addComponent(jLabel9))
+                                        .addGap(0, 0, Short.MAX_VALUE)))))
+                        .addGap(36, 36, 36))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -242,9 +258,13 @@ public class CadastrarSerieAssistida extends javax.swing.JFrame {
                     .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel8)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -285,6 +305,10 @@ public class CadastrarSerieAssistida extends javax.swing.JFrame {
 
     private void cancelarFilmeAssistidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarFilmeAssistidoActionPerformed
         this.setVisible(false);
+        
+        Menu objMenu = new Menu();
+        objMenu.setVisible(true);
+        dispose();
     }//GEN-LAST:event_cancelarFilmeAssistidoActionPerformed
 
     private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed
@@ -300,30 +324,38 @@ public class CadastrarSerieAssistida extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelarFilmeAssistido1ActionPerformed
 
     private void cancelarFilmeAssistido2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarFilmeAssistido2ActionPerformed
-        // TODO add your handling code here:
-        String nomeFilme = nomeFilmeAssistido.getText();
+        String nomeMidia = nomeFilmeAssistido.getText();
         String genero = checkboxGeneroFilmeAssistido.getSelectedItem().toString();
         String dataAssistiu = jFormattedTextField1.getText();
         double nota = Double.parseDouble(jTextField1.getText());
         boolean ehFavorito = favoritarFilmeAssistido.isSelected();
-        int duracao = Integer.parseInt(jTextField2.getText());
+        int temporada = Integer.parseInt(jTextField2.getText());
+        int episodio = Integer.parseInt(jTextField3.getText());
         String comentario = comentarioFilmeAssistido.getText();
-            
-        if (nomeFilme.isEmpty() || genero.isEmpty() || dataAssistiu.isEmpty() || comentario.isEmpty()) {
+
+        if (nomeMidia.isEmpty() || genero.isEmpty() || dataAssistiu.isEmpty() || comentario.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos.", "Erro", JOptionPane.ERROR_MESSAGE);
-        } else {
-            Filme filme = new Filme(nomeFilme, genero, dataAssistiu, ehFavorito, comentario, nota, duracao);
-            filme.adicionarMidia();
-            JOptionPane.showMessageDialog(this, "O filme foi adicionado com sucesso.", "Cadastro realizado!", JOptionPane.INFORMATION_MESSAGE);
-            nomeFilmeAssistido.setText("");
-            checkboxGeneroFilmeAssistido.setSelectedIndex(0);
-            jFormattedTextField1.setText("");
-            jTextField1.setText("");
-            favoritarFilmeAssistido.setSelected(false);
-            jTextField2.setText("");
-            comentarioFilmeAssistido.setText("");
+            return;
         }
+
+        Serie serie = new Serie(nomeMidia, genero, dataAssistiu, ehFavorito, comentario, nota, temporada, episodio);
+        serie.adicionarMidia();
+    
+        nomeFilmeAssistido.setText("");
+        checkboxGeneroFilmeAssistido.setSelectedIndex(0);
+        jFormattedTextField1.setText("");
+        jTextField1.setText("");
+        favoritarFilmeAssistido.setSelected(false);
+        jTextField2.setText("");
+        jTextField3.setText("");
+        comentarioFilmeAssistido.setText("");
+        
+        JOptionPane.showMessageDialog(this, "A série foi adicionada com sucesso.", "Cadastro realizado!", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_cancelarFilmeAssistido2ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -377,10 +409,13 @@ public class CadastrarSerieAssistida extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField nomeFilmeAssistido;
     // End of variables declaration//GEN-END:variables
 }

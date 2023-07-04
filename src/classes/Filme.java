@@ -13,11 +13,6 @@ public class Filme extends Midia{
     private int duracao;
     
     public Filme() {}
-    
-    public Filme(String nomeMidia, String genero) {
-        //Construtor para atender a classe QueroAssistir
-        super(nomeMidia, genero);
-    }
 
     public Filme(String nomeMidia, String genero, String dataAssistiu, boolean ehFavorito, String comentario, double nota, int duracao) {
         super(nomeMidia, genero, dataAssistiu, ehFavorito);
@@ -123,14 +118,5 @@ public class Filme extends Midia{
         } catch (IOException e) {
             System.out.println("Erro ao escrever no arquivo de filmes: " + e.getMessage());
         }    
-    }
-    
-    @Override
-    public String toTexto() {
-        /*Tem a funcionalidade de retornar uma representação em texto dos atributos da mídia separados por um caractere delimitador.
-        Retorna uma string concatenada no seguinte formato: "Filme;Nome do Filme;Gênero do Filme"
-        Essa String representa os atributos da mídia de uma forma estruturada, 
-        permitindo que eles possam ser facilmente recuperados e interpretados posteriormente.*/
-        return "Filme;" + nomeMidia + ";" + genero;
     }
 }

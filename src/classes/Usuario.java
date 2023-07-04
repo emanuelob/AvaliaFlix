@@ -55,7 +55,7 @@ public class Usuario {
     }
 
     public boolean validarEmail(String email) {
-        // Verifica se o e-mail possui um formato válido
+        //Verifica se o e-mail possui um formato válido
         String regex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
         return email.matches(regex);
     }

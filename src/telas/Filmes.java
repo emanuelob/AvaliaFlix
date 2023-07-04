@@ -46,7 +46,7 @@ public class Filmes extends javax.swing.JFrame {
         telaInicial.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 123, 255)));
         telaInicial.setBorderPainted(false);
         telaInicial.setContentAreaFilled(false);
-        telaInicial.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        telaInicial.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         telaInicial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 telaInicialActionPerformed(evt);
@@ -102,7 +102,7 @@ public class Filmes extends javax.swing.JFrame {
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/search40-removebg-preview.png"))); // NOI18N
         jButton1.setText("Pesquisar");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

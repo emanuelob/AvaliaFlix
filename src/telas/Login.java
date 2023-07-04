@@ -74,7 +74,7 @@ public class Login extends javax.swing.JFrame {
         registrar.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         registrar.setForeground(new java.awt.Color(64, 123, 255));
         registrar.setText("Registre-se");
-        registrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        registrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         registrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 registrarActionPerformed(evt);
@@ -84,7 +84,7 @@ public class Login extends javax.swing.JFrame {
         entrar.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         entrar.setForeground(new java.awt.Color(64, 123, 255));
         entrar.setText("Entrar");
-        entrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        entrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         entrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 entrarActionPerformed(evt);
