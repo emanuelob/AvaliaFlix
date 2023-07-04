@@ -4,6 +4,8 @@ package classes;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class Estatisticas {
@@ -16,14 +18,14 @@ public class Estatisticas {
     O método gerarEstatisticas() é responsável por chamar os métodos auxiliares para contar o total de filmes, 
     o total de séries e o total de mídias, e imprimir essas informações na saída.*/
     
-    private String arquivoFilmes;
-    private String arquivoSeries;
-
-    public Estatisticas(String arquivoFilmes, String arquivoSeries) {
-        this.arquivoFilmes = "src/arquivosTXT/filmes.txt";
-        this.arquivoSeries = "src/arquivosTXT/series.txt";
+    
+    public Estatisticas() {
     }
 
+    
+    
+    
+    
     public void gerarEstatisticas() {
         try {
             int totalFilmes = contarFilmes();
@@ -45,7 +47,7 @@ public class Estatisticas {
     fechamos o leitor e retornamos o total de filmes encontrados.*/
     private int contarFilmes() throws IOException {
         int totalFilmes = 0;
-        BufferedReader reader = new BufferedReader(new FileReader(arquivoFilmes));
+        BufferedReader reader = new BufferedReader(new FileReader("src/arquivosTXT/filmes.txt"));
         while (reader.readLine() != null) {
             totalFilmes++;
         }
@@ -57,7 +59,7 @@ public class Estatisticas {
     Também utiliza um contador para contar o número de linhas e retorna o total de séries encontradas.*/
     private int contarSeries() throws IOException {
     int totalSeries = 0;
-    BufferedReader reader = new BufferedReader(new FileReader(arquivoSeries));
+    BufferedReader reader = new BufferedReader(new FileReader("src/arquivosTXT/series.txt"));
     while (reader.readLine() != null) {
         totalSeries++;
     }
@@ -72,105 +74,73 @@ public class Estatisticas {
     são responsáveis por ler os arquivos de filmes e séries, contar a quantidade de cada gênero e calcular a porcentagem em relação ao total de filmes, séries ou mídias. 
     Os resultados são exibidos na saída.*/
     
-    public void calcularPorcentagemGeneros() {
-    try {
-        int totalFilmes = contarFilmes();
-        int totalSeries = contarSeries();
-        int totalMidias = totalFilmes + totalSeries;
+    
+    
+public void calcularPorcentagemGeralGeneros() {
+    Map<String, Integer> generosContagemFilme = new HashMap<>();
+    Map<String, Integer> generosContagemSerie = new HashMap<>();
+    Map<String, Integer> generosContagemGeral = new HashMap<>();
+    int totalFilmes = 0;
+    int totalSeries = 0;
 
-        System.out.println("Estatísticas por Gênero:");
-        calcularPorcentagemGenerosFilmes(totalFilmes);
-        calcularPorcentagemGenerosSeries(totalSeries);
-        calcularPorcentagemGenerosGeral(totalMidias);
+    try (BufferedReader filmesBr = new BufferedReader(new FileReader("src/arquivosTXT/filmes.txt"));
+         BufferedReader seriesBr = new BufferedReader(new FileReader("src/arquivosTXT/series.txt"))) {
+
+        // Calcular a porcentagem dos gêneros para os filmes
+        String linhaFilmes;
+        while ((linhaFilmes = filmesBr.readLine()) != null) {
+            String[] dadosFilme = linhaFilmes.split(";");
+            if (dadosFilme.length >= 2) {
+                String genero = dadosFilme[1];
+                generosContagemFilme.put(genero, generosContagemFilme.getOrDefault(genero, 0) + 1);
+                generosContagemGeral.put(genero, generosContagemGeral.getOrDefault(genero, 0) + 1);
+                totalFilmes++;
+            }
+        }
+        System.out.println("Porcentagem dos gêneros dos filmes assistidos:");
+        for (Map.Entry<String, Integer> entry : generosContagemFilme.entrySet()) {
+            String genero = entry.getKey();
+            int contagem = entry.getValue();
+            double porcentagem = (contagem * 100.0) / totalFilmes;
+            System.out.printf("%s: %.2f%%%n", genero, porcentagem);
+        }
+
+        // Calcular a porcentagem dos gêneros para as séries
+        String linhaSeries;
+        while ((linhaSeries = seriesBr.readLine()) != null) {
+            String[] dadosSerie = linhaSeries.split(";");
+            if (dadosSerie.length >= 2) {
+                String genero = dadosSerie[1];
+                generosContagemSerie.put(genero, generosContagemSerie.getOrDefault(genero, 0) + 1);
+                generosContagemGeral.put(genero, generosContagemGeral.getOrDefault(genero, 0) + 1);
+                totalSeries++;
+            }
+        }
+        System.out.println("Porcentagem dos gêneros das séries assistidos:");
+        for (Map.Entry<String, Integer> entry : generosContagemSerie.entrySet()) {
+            String genero = entry.getKey();
+            int contagem = entry.getValue();
+            double porcentagem = (contagem * 100.0) / totalSeries;
+            System.out.printf("%s: %.2f%%%n", genero, porcentagem);
+        }
+        
+        
     } catch (IOException e) {
-        System.out.println("Erro ao ler os arquivos.");
         e.printStackTrace();
+    }
+
+    // Calcular a porcentagem dos gêneros de um modo geral
+    System.out.println("Porcentagem geral dos gêneros assistidos:");
+    for (Map.Entry<String, Integer> entry : generosContagemGeral.entrySet()) {
+        String genero = entry.getKey();
+        int contagem = entry.getValue();
+        int total = totalFilmes + totalSeries;
+        double porcentagem = (contagem * 100.0) / total;
+        System.out.printf("%s: %.2f%%%n", genero, porcentagem);
     }
 }
 
-    private void calcularPorcentagemGenerosFilmes(int totalFilmes) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(arquivoFilmes));
-        int[] generosContagem = new int[7]; // Os 7 gêneros que definimos na interface gráfica
-        int totalGeneros = 0;
 
-        String linha;
-        while ((linha = reader.readLine()) != null) {
-            String[] dados = linha.split(";");
-            if (dados.length >= 2) {
-                String genero = dados[1];
-                int indexGenero = Integer.parseInt(genero);
-                generosContagem[indexGenero]++;
-                totalGeneros++;
-            }
-        }
-        reader.close();
-
-        System.out.println("Estatísticas dos Filmes:");
-        for (int i = 0; i < generosContagem.length; i++) {
-            double porcentagem = (double) generosContagem[i] / totalFilmes * 100;
-            System.out.println("Gênero " + i + ": " + porcentagem + "%");
-        }
-    }
-
-    private void calcularPorcentagemGenerosSeries(int totalSeries) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(arquivoSeries));
-        int[] generosContagem = new int[10]; // Assumindo que existem até 10 gêneros diferentes
-        int totalGeneros = 0;
-
-        String linha;
-        while ((linha = reader.readLine()) != null) {
-            String[] dados = linha.split(";");
-            if (dados.length >= 2) {
-                String genero = dados[1];
-                int indexGenero = Integer.parseInt(genero);
-                generosContagem[indexGenero]++;
-                totalGeneros++;
-            }
-        }
-        reader.close();
-
-        System.out.println("Estatísticas das Séries:");
-        for (int i = 0; i < generosContagem.length; i++) {
-            double porcentagem = (double) generosContagem[i] / totalSeries * 100;
-            System.out.println("Gênero " + i + ": " + porcentagem + "%");
-        }
-    }
-
-    private void calcularPorcentagemGenerosGeral(int totalMidias) throws IOException {
-        BufferedReader readerFilmes = new BufferedReader(new FileReader(arquivoFilmes));
-        BufferedReader readerSeries = new BufferedReader(new FileReader(arquivoSeries));
-        int[] generosContagem = new int[10]; // Assumindo que existem até 10 gêneros diferentes
-        int totalGeneros = 0;
-
-        String linha;
-        while ((linha = readerFilmes.readLine()) != null) {
-            String[] dados = linha.split(";");
-            if (dados.length >= 2) {
-                String genero = dados[1];
-                int indexGenero = Integer.parseInt(genero);
-                generosContagem[indexGenero]++;
-                totalGeneros++;
-            }
-        }
-        readerFilmes.close();
-
-        while ((linha = readerSeries.readLine()) != null) {
-            String[] dados = linha.split(";");
-            if (dados.length >= 2) {
-                String genero = dados[1];
-                int indexGenero = Integer.parseInt(genero);
-                generosContagem[indexGenero]++;
-                totalGeneros++;
-            }
-        }
-        readerSeries.close();
-
-        System.out.println("Estatísticas Gerais:");
-        for (int i = 0; i < generosContagem.length; i++) {
-            double porcentagem = (double) generosContagem[i] / totalMidias * 100;
-            System.out.println("Gênero " + i + ": " + porcentagem + "%");
-        }
-    }
     
     /*Nesse código, criamos o método calcularClassificacoesPorNota(), 
     responsável por chamar os métodos auxiliares para calcular a quantidade de mídias classificadas com cada nota de 1 a 5 em filmes, séries e de forma geral.
@@ -196,7 +166,7 @@ public class Estatisticas {
     }
 
     private void calcularClassificacoesPorNotaFilmes(int totalFilmes) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(arquivoFilmes));
+        BufferedReader reader = new BufferedReader(new FileReader("src/arquivosTXT/filmes.txt"));
         int[] classificacoesContagem = new int[6]; // Assumindo que as notas variam de 1 a 5
 
         String linha;
@@ -217,7 +187,7 @@ public class Estatisticas {
     }
 
     private void calcularClassificacoesPorNotaSeries(int totalSeries) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(arquivoSeries));
+        BufferedReader reader = new BufferedReader(new FileReader("src/arquivosTXT/series.txt"));
         int[] classificacoesContagem = new int[6]; // Assumindo que as notas variam de 1 a 5
 
         String linha;
@@ -238,8 +208,8 @@ public class Estatisticas {
     }
 
     private void calcularClassificacoesPorNotaGeral(int totalMidias) throws IOException {
-        BufferedReader readerFilmes = new BufferedReader(new FileReader(arquivoFilmes));
-        BufferedReader readerSeries = new BufferedReader(new FileReader(arquivoSeries));
+        BufferedReader readerFilmes = new BufferedReader(new FileReader("src/arquivosTXT/filmes.txt"));
+        BufferedReader readerSeries = new BufferedReader(new FileReader("src/arquivosTXT/series.txt"));
         int[] classificacoesContagem = new int[6]; // Assumindo que as notas variam de 1 a 5
 
         String linha;
@@ -291,7 +261,7 @@ public class Estatisticas {
 }
 
     private void calcularTempoFilmes(int totalFilmes) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(arquivoFilmes));
+        BufferedReader reader = new BufferedReader(new FileReader("src/arquivosTXT/filmes.txt"));
         int totalMinutos = 0;
 
         String linha;
@@ -312,7 +282,7 @@ public class Estatisticas {
     }
 
     private void calcularTempoSeries(int totalSeries) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(arquivoSeries));
+        BufferedReader reader = new BufferedReader(new FileReader("src/arquivosTXT/series.txt"));
         int totalMinutos = 0;
 
         String linha;
@@ -333,8 +303,8 @@ public class Estatisticas {
     }
 
     private void calcularTempoGeral(int totalMidias) throws IOException {
-        BufferedReader readerFilmes = new BufferedReader(new FileReader(arquivoFilmes));
-        BufferedReader readerSeries = new BufferedReader(new FileReader(arquivoSeries));
+        BufferedReader readerFilmes = new BufferedReader(new FileReader("src/arquivosTXT/filmes.txt"));
+        BufferedReader readerSeries = new BufferedReader(new FileReader("src/arquivosTXT/series.txt"));
         int totalMinutos = 0;
 
         String linha;
@@ -363,16 +333,5 @@ public class Estatisticas {
         System.out.println("Tempo Total: " + horas + " horas e " + minutos + " minutos");
     }
     
-    /*
-    Na implementação anterior, abordamos algumas estatísticas com base nos requisitos mencionados. No entanto, é possível adicionar mais estatísticas conforme necessário. Aqui estão algumas sugestões adicionais:
-
-    Média das notas: Você pode adicionar um método para calcular a média das notas atribuídas às mídias cadastradas, tanto para filmes quanto para séries, bem como uma média geral. Isso fornecerá uma medida de avaliação média das mídias assistidas pelo usuário.
-
-    Média de duração:Da mesma forma, você pode adicionar um método para calcular a média da duração das mídias cadastradas, separadamente para filmes e séries, e uma média geral. Isso dará uma ideia da duração média das mídias assistidas pelo usuário.
-
-    Porcentagem de mídias favoritas: Você pode calcular a porcentagem de mídias favoritas em relação ao total de mídias assistidas. Isso mostrará a proporção de mídias favoritas em relação ao total.
-
-    Mídia mais assistida: Você pode determinar qual mídia foi assistida com mais frequência, seja filme ou série. Isso pode ser útil para identificar as preferências do usuário em relação a um tipo de mídia específico.
-Essas são apenas algumas sugestões adicionais. Você pode personalizar a classe Estatística e adicionar as estatísticas que são relevantes para o seu sistema ou os requisitos do seu projeto específico.
-    */
+   
 }

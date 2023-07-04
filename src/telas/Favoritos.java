@@ -81,7 +81,7 @@ public class Favoritos extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/home 50px.png"))); // NOI18N
         jButton1.setText("Home");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jTextField1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         jTextField1.setText("Coloque seus filmes Favoritos aqui :");
@@ -105,7 +105,7 @@ public class Favoritos extends javax.swing.JFrame {
         jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jTextField3.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(71, 123, 255));
+        jTextField3.setForeground(new java.awt.Color(64, 123, 255));
         jTextField3.setText("Olá , Usuário");
         jTextField3.setBorder(null);
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
@@ -177,6 +177,7 @@ public class Favoritos extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

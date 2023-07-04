@@ -34,6 +34,10 @@ public class Principal {
         filme1.toTexto();
         serie1.toTexto();
         
+        Estatisticas estat = new Estatisticas(); 
+        
+        estat.calcularClassificacoesPorNota();
+
         //Verificando cadastro de usuário
         Usuario user = new Usuario("Debora", "debs@gmail.com", "123", "Debra");
         Usuario user1 = new Usuario("Debora", "debs_gmail.com", "123", "Debra");
