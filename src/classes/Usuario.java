@@ -6,6 +6,8 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Usuario {
     private String nomeCompleto;
@@ -58,22 +60,34 @@ public class Usuario {
         return email.matches(regex);
     }
     
-    public void editarUsuario(String novoNomeCompleto, String novoEmail, String novaSenha, String novoNomeUsuario) {
+    public void editarUsuario(String user, String novoNomeCompleto, String novoEmail, String novaSenha, String novoNomeUsuario) {
+        List<String> usuarios = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader("src/arquivosTXT/usuarios.txt"))) {
             String linha;
             while ((linha = reader.readLine()) != null) {
                 String[] dadosUsuario = linha.split(";");
-                if (dadosUsuario.length == 4) {
+                if (dadosUsuario[3].equals(user)) {
                     dadosUsuario[0] = novoNomeCompleto;
                     dadosUsuario[1] = novoEmail;
                     dadosUsuario[2] = novaSenha;
                     dadosUsuario[3] = novoNomeUsuario;
-                    }
+                    
+                    linha = String.join(";", dadosUsuario); 
                 }
+                usuarios.add(linha);
+            }
         } catch (IOException e) {
             System.out.println("Erro ao ler o arquivo de usuários: " + e.getMessage());
         }
-    }
+        
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/arquivosTXT/usuarios.txt"))) {
+            for (String usuario : usuarios) {
+                writer.write(usuario);
+                writer.newLine();
+            }} catch (IOException e) {
+            System.out.println("Erro ao escrever no arquivo de filmes: " + e.getMessage());
+            } 
+        }
 
     public String getNomeCompleto() {
         return nomeCompleto;

@@ -57,7 +57,7 @@ public class Menu extends javax.swing.JFrame {
 
         ola.setFont(new java.awt.Font("SansSerif", 1, 26)); // NOI18N
         ola.setForeground(new java.awt.Color(64, 123, 255));
-        ola.setText("Olá, usuário!");
+        ola.setText("Olá!");
 
         iconOla.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagensProj/hello.png"))); // NOI18N
 
@@ -178,7 +178,7 @@ public class Menu extends javax.swing.JFrame {
 
         playlistjButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         playlistjButton.setForeground(new java.awt.Color(64, 123, 255));
-        playlistjButton.setText("Playlist");
+        playlistjButton.setText("Quero Assistir");
         playlistjButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         playlistjButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -190,13 +190,13 @@ public class Menu extends javax.swing.JFrame {
         playlistPanel.setLayout(playlistPanelLayout);
         playlistPanelLayout.setHorizontalGroup(
             playlistPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(playlistPanelLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(playlistjButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, playlistPanelLayout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
-                .addComponent(playlistIcon)
+                .addContainerGap(15, Short.MAX_VALUE)
+                .addGroup(playlistPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(playlistjButton)
+                    .addGroup(playlistPanelLayout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(playlistIcon)))
                 .addGap(21, 21, 21))
         );
         playlistPanelLayout.setVerticalGroup(
@@ -305,11 +305,13 @@ public class Menu extends javax.swing.JFrame {
         );
 
         jMenu1.setText("Usuário");
+        jMenu1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jMenuItem1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jMenuItem1.setForeground(new java.awt.Color(64, 123, 255));
         jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagensProj/trocarUserr.png"))); // NOI18N
         jMenuItem1.setText("Alterar dados do Usuário");
+        jMenuItem1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
